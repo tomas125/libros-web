@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+
+# Placeholder: cambiar por el dominio definitivo (ver lib/siteConfig.ts)
+Sitemap: https://entrepaginas.com.ar/sitemap.xml

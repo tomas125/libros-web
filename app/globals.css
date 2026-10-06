@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tema "librería": papel crema + tinta + bordó. Cambiá la paleta SOLO acá. */
+:root {
+  --paper: #fbf7f0;
+  --paper-2: #f4ecdd;
+  --paper-3: #eadfca;
+  --ink: #2b2118;
+  --ink-2: #4a3d30;
+  --ink-muted: #6f6153;
+  --line: #e2d6c0;
+
+  --accent: #7a1f2b; /* bordó */
+  --accent-dark: #5c1520;
+  --accent-soft: #f3e1e3;
+  --gold: #b8892f;
+  --ok: #2f6b4a;
+  --danger: #a3262f;
+
+  --shadow-card: 0 1px 2px rgba(43, 33, 24, 0.06), 0 8px 24px -12px rgba(43, 33, 24, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), Georgia, serif;
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ── Botones ─────────────────────────────────────────────── */
+.btn-primary,
+.btn-secondary,
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-dark);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink-2);
+}
+.btn-secondary:hover:not(:disabled) {
+  background: var(--paper-2);
+}
+.btn-whatsapp {
+  background: #1f7a4d;
+  color: #fff;
+}
+.btn-whatsapp:hover:not(:disabled) {
+  background: #17603c;
+}
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-whatsapp:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── Formularios ─────────────────────────────────────────── */
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  margin-bottom: 6px;
+}
+.field {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: var(--ink);
+}
+.field:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* ── Tarjetas / badges ───────────────────────────────────── */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+}
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+.badge-nuevo {
+  background: #e3f0e8;
+  color: var(--ok);
+}
+.badge-usado {
+  background: #f6ead0;
+  color: #7d5a14;
+}
+
+/* Cinta decorativa de lomos de libros (hero) */
+.spines {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+.spines span {
+  display: block;
+  width: 22px;
+  border-radius: 3px 3px 1px 1px;
+  box-shadow: inset -3px 0 0 rgba(0, 0, 0, 0.12);
+}

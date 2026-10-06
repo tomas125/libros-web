@@ -1,0 +1,24 @@
+# dependencias
+node_modules/
+
+# Next.js
+.next/
+out/
+*.tsbuildinfo
+
+# entorno (no subir credenciales)
+.env
+.env.local
+.env.*.local
+
+# base de datos local y subidas (SQLite)
+data/local/
+public/uploads/*
+!public/uploads/.gitkeep
+
+# logs / OS
+npm-debug.log*
+.DS_Store
+
+# config local de Claude
+.claude/
